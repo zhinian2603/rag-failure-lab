@@ -1,0 +1,150 @@
+{
+  "run": {
+    "id": "811cac7829b28ea5",
+    "dataset": "Beacon Helpdesk traces (synthetic)",
+    "created_at": "2026-10-08T13:11:21.064966+00:00",
+    "config": {
+      "mode": "recorded",
+      "top_k": 2,
+      "grounding_threshold": 0.25
+    },
+    "summary": {
+      "case_count": 4,
+      "retrieval_recall_at_k": 0.75,
+      "retrieval_mrr": 0.75,
+      "valid_citation_rate": 0.5,
+      "answer_completeness": 0.75,
+      "average_lexical_support": 0.5223,
+      "passed_rate": 0.25,
+      "diagnoses": {
+        "pass": 1,
+        "retrieval_miss": 1,
+        "citation_error": 1,
+        "answer_gap": 1
+      }
+    },
+    "cases": [
+      {
+        "id": "T01",
+        "question": "How long is the hardware warranty?",
+        "answer": "Beacon hardware has a 12 months warranty. [warranty]",
+        "expected_answer": "12 months from delivery.",
+        "required_doc_ids": [
+          "warranty"
+        ],
+        "citations": [
+          "warranty"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "warranty",
+            "title": "Hardware warranty",
+            "score": null
+          },
+          {
+            "doc_id": "returns",
+            "title": "Return window",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 1.0,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "T02",
+        "question": "When can I return unused hardware?",
+        "answer": "Unused hardware can be returned within 14 days. [returns]",
+        "expected_answer": "Within 14 days of delivery.",
+        "required_doc_ids": [
+          "returns"
+        ],
+        "citations": [
+          "returns"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "warranty",
+            "title": "Hardware warranty",
+            "score": null
+          },
+          {
+            "doc_id": "shipment",
+            "title": "Replacement shipment",
+            "score": null
+          }
+        ],
+        "recall_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "citations_valid": false,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.7143,
+        "diagnosis": "retrieval_miss"
+      },
+      {
+        "id": "T03",
+        "question": "How fast does a replacement device ship?",
+        "answer": "The replacement device ships within 2 business days. [warranty]",
+        "expected_answer": "Within 2 business days after approval.",
+        "required_doc_ids": [
+          "shipment"
+        ],
+        "citations": [
+          "warranty"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "shipment",
+            "title": "Replacement shipment",
+            "score": null
+          },
+          {
+            "doc_id": "warranty",
+            "title": "Hardware warranty",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": false,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.125,
+        "diagnosis": "citation_error"
+      },
+      {
+        "id": "T04",
+        "question": "What if I lose my authenticator?",
+        "answer": "Contact support for assistance. [security]",
+        "expected_answer": "Use a recovery code to sign in; support cannot bypass MFA.",
+        "required_doc_ids": [
+          "security"
+        ],
+        "citations": [
+          "security"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "security",
+            "title": "MFA account recovery",
+            "score": null
+          },
+          {
+            "doc_id": "warranty",
+            "title": "Hardware warranty",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 0.0,
+        "lexical_support": 0.25,
+        "diagnosis": "answer_gap"
+      }
+    ]
+  },
+  "comparison": null
+}

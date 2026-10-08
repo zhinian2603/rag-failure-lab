@@ -1,0 +1,329 @@
+{
+  "run": {
+    "id": "d00755a79fee629d",
+    "dataset": "Northstar Support (synthetic)",
+    "created_at": "2026-10-08T13:10:53.169353+00:00",
+    "config": {
+      "mode": "recorded",
+      "top_k": 1,
+      "grounding_threshold": 0.25
+    },
+    "summary": {
+      "case_count": 12,
+      "retrieval_recall_at_k": 1.0,
+      "retrieval_mrr": 1.0,
+      "valid_citation_rate": 0.9167,
+      "answer_completeness": 0.875,
+      "average_lexical_support": 0.7697,
+      "passed_rate": 0.8333,
+      "diagnoses": {
+        "pass": 10,
+        "answer_gap": 1,
+        "citation_error": 1
+      }
+    },
+    "cases": [
+      {
+        "id": "C01",
+        "question": "Can I refund an annual plan after first purchase?",
+        "answer": "Annual plans can be refunded within 30 days of first purchase. [refunds]",
+        "expected_answer": "Within 30 days of the first purchase; renewals are excluded.",
+        "required_doc_ids": [
+          "refunds"
+        ],
+        "citations": [
+          "refunds"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "refunds",
+            "title": "Annual plan refunds",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.8889,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C02",
+        "question": "How long does a password reset link remain valid?",
+        "answer": "The password reset link lasts 20 minutes. [password]",
+        "expected_answer": "20 minutes.",
+        "required_doc_ids": [
+          "password"
+        ],
+        "citations": [
+          "password"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "password",
+            "title": "Password reset",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.8333,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C03",
+        "question": "Who can export workspace data and in what format?",
+        "answer": "An admin can request a CSV data export. [export]",
+        "expected_answer": "Workspace admins can request a CSV export.",
+        "required_doc_ids": [
+          "export"
+        ],
+        "citations": [
+          "export"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "export",
+            "title": "Workspace data export",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.8,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C04",
+        "question": "How many days are Business audit logs kept?",
+        "answer": "Business audit logs are retained for 30 days. [audit]",
+        "expected_answer": "90 days.",
+        "required_doc_ids": [
+          "audit"
+        ],
+        "citations": [
+          "audit"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "audit",
+            "title": "Audit log retention",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 0.0,
+        "lexical_support": 0.8333,
+        "diagnosis": "answer_gap"
+      },
+      {
+        "id": "C05",
+        "question": "Which plan supports SAML single sign-on?",
+        "answer": "SAML 2.0 single sign-on is included with Enterprise. [sso]",
+        "expected_answer": "Enterprise plan.",
+        "required_doc_ids": [
+          "sso"
+        ],
+        "citations": [
+          "sso"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "sso",
+            "title": "SAML single sign-on",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.75,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C06",
+        "question": "Can a deleted file be restored after two weeks?",
+        "answer": "Deleted files can be recovered for 30 days. [deletion]",
+        "expected_answer": "Yes, during the 30-day recovery window.",
+        "required_doc_ids": [
+          "deletion"
+        ],
+        "citations": [
+          "deletion"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "deletion",
+            "title": "Deleted file recovery",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.6667,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C07",
+        "question": "What should our client do after an API 429 response?",
+        "answer": "Retry with exponential backoff and respect Retry-After. [rate-limit]",
+        "expected_answer": "Retry with exponential backoff and respect Retry-After.",
+        "required_doc_ids": [
+          "rate-limit"
+        ],
+        "citations": [
+          "rate-limit"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "rate-limit",
+            "title": "API request limits",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.7143,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C08",
+        "question": "Can any workspace member download invoices?",
+        "answer": "Only the billing owner can download monthly PDF invoices. [invoices]",
+        "expected_answer": "No. Only the billing owner can download invoices.",
+        "required_doc_ids": [
+          "invoices"
+        ],
+        "citations": [
+          "invoices"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "invoices",
+            "title": "Download invoices",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 1.0,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C09",
+        "question": "Where is EU customer data hosted?",
+        "answer": "European Union data is hosted in Frankfurt. [regions]",
+        "expected_answer": "Frankfurt region.",
+        "required_doc_ids": [
+          "regions"
+        ],
+        "citations": [
+          "regions"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "regions",
+            "title": "Data residency regions",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.8333,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C10",
+        "question": "Is the enterprise urgent support four hour target a fix guarantee?",
+        "answer": "Critical incidents target a first response within 4 hours, not guaranteed resolution. [support]",
+        "expected_answer": "No. It is a first-response target, not a resolution guarantee.",
+        "required_doc_ids": [
+          "support"
+        ],
+        "citations": [
+          "support"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "support",
+            "title": "Priority support response",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.9167,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C11",
+        "question": "How long does an old API key work after rotation?",
+        "answer": "The old API key stays active for 24 hours. [keys]",
+        "expected_answer": "24 hours after rotation.",
+        "required_doc_ids": [
+          "keys"
+        ],
+        "citations": [
+          "keys"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "keys",
+            "title": "API key rotation",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": true,
+        "expected_term_coverage": 1.0,
+        "lexical_support": 0.875,
+        "diagnosis": "pass"
+      },
+      {
+        "id": "C12",
+        "question": "How do we authenticate incoming webhook events?",
+        "answer": "Verify the HMAC SHA-256 signature before processing. [keys]",
+        "expected_answer": "Verify the HMAC SHA-256 signature with the webhook secret.",
+        "required_doc_ids": [
+          "webhooks"
+        ],
+        "citations": [
+          "keys"
+        ],
+        "retrieved": [
+          {
+            "doc_id": "webhooks",
+            "title": "Webhook signature verification",
+            "score": null
+          }
+        ],
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "citations_valid": false,
+        "expected_term_coverage": 0.5,
+        "lexical_support": 0.125,
+        "diagnosis": "citation_error"
+      }
+    ]
+  },
+  "comparison": null
+}
