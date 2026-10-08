@@ -1,0 +1,15 @@
+{
+  "name": "Beacon Helpdesk traces (synthetic)",
+  "documents": [
+    {"id":"warranty","title":"Hardware warranty","text":"Beacon hardware has a 12 months warranty from the delivery date. Accidental damage is excluded."},
+    {"id":"returns","title":"Return window","text":"Customers can return unused hardware within 14 days of delivery. A return authorization is required."},
+    {"id":"shipment","title":"Replacement shipment","text":"A replacement device ships within 2 business days after the support team approves the request."},
+    {"id":"security","title":"MFA account recovery","text":"Users who lose an authenticator can sign in with a recovery code. Support cannot bypass multi-factor authentication."}
+  ],
+  "cases": [
+    {"id":"T01","question":"How long is the hardware warranty?","answer":"Beacon hardware has a 12 months warranty. [warranty]","expected_answer":"12 months from delivery.","required_doc_ids":["warranty"],"citations":["warranty"],"expected_terms":["12 months"],"retrieved_doc_ids":["warranty","returns"]},
+    {"id":"T02","question":"When can I return unused hardware?","answer":"Unused hardware can be returned within 14 days. [returns]","expected_answer":"Within 14 days of delivery.","required_doc_ids":["returns"],"citations":["returns"],"expected_terms":["14 days"],"retrieved_doc_ids":["warranty","shipment"]},
+    {"id":"T03","question":"How fast does a replacement device ship?","answer":"The replacement device ships within 2 business days. [warranty]","expected_answer":"Within 2 business days after approval.","required_doc_ids":["shipment"],"citations":["warranty"],"expected_terms":["2 business days"],"retrieved_doc_ids":["shipment","warranty"]},
+    {"id":"T04","question":"What if I lose my authenticator?","answer":"Contact support for assistance. [security]","expected_answer":"Use a recovery code to sign in; support cannot bypass MFA.","required_doc_ids":["security"],"citations":["security"],"expected_terms":["recovery code"],"retrieved_doc_ids":["security","warranty"]}
+  ]
+}

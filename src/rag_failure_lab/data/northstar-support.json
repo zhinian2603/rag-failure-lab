@@ -1,0 +1,31 @@
+{
+  "name": "Northstar Support (synthetic)",
+  "documents": [
+    {"id":"refunds","title":"Annual plan refunds","text":"An annual subscription can be refunded within 30 days of its first purchase. Renewals are not refundable. The billing owner submits the request from the billing page."},
+    {"id":"password","title":"Password reset","text":"A password reset link expires after 20 minutes. A new link can be requested from the sign-in page. Support cannot read or set a user's password."},
+    {"id":"export","title":"Workspace data export","text":"Workspace admins can request a CSV data export from Settings. The export is prepared within 24 hours and the download link remains available for 7 days."},
+    {"id":"audit","title":"Audit log retention","text":"Audit logs are retained for 90 days on the Business plan. Enterprise customers can configure a longer retention period in their contract."},
+    {"id":"sso","title":"SAML single sign-on","text":"SAML 2.0 single sign-on is available on the Enterprise plan. Workspace admins configure the identity provider metadata and test login before enforcement."},
+    {"id":"deletion","title":"Deleted file recovery","text":"Deleted files remain recoverable for 30 days. After the recovery window closes, files are permanently removed from Northstar storage."},
+    {"id":"rate-limit","title":"API request limits","text":"The API permits 1000 requests per minute per workspace. Excess requests receive HTTP 429. Clients should retry with exponential backoff and respect Retry-After."},
+    {"id":"invoices","title":"Download invoices","text":"Only the billing owner can download invoices from the Billing page. Invoices are issued monthly in PDF format."},
+    {"id":"regions","title":"Data residency regions","text":"European Union data residency uses the Frankfurt region. Region choice is made when a workspace is created and cannot be changed later."},
+    {"id":"support","title":"Priority support response","text":"Enterprise priority support has a target first response within 4 hours for critical incidents. The target is not a resolution guarantee."},
+    {"id":"keys","title":"API key rotation","text":"Workspace admins should rotate API keys every 90 days. After rotation, the old key remains active for 24 hours to allow a safe transition."},
+    {"id":"webhooks","title":"Webhook signature verification","text":"Webhook payloads include an HMAC SHA-256 signature header. Verify the signature with your webhook secret before processing the event."}
+  ],
+  "cases": [
+    {"id":"C01","question":"Can I refund an annual plan after first purchase?","answer":"Annual plans can be refunded within 30 days of first purchase. [refunds]","expected_answer":"Within 30 days of the first purchase; renewals are excluded.","required_doc_ids":["refunds"],"citations":["refunds"],"expected_terms":["30 days","first purchase"]},
+    {"id":"C02","question":"How long does a password reset link remain valid?","answer":"The password reset link lasts 20 minutes. [password]","expected_answer":"20 minutes.","required_doc_ids":["password"],"citations":["password"],"expected_terms":["20 minutes"]},
+    {"id":"C03","question":"Who can export workspace data and in what format?","answer":"An admin can request a CSV data export. [export]","expected_answer":"Workspace admins can request a CSV export.","required_doc_ids":["export"],"citations":["export"],"expected_terms":["admin","CSV"]},
+    {"id":"C04","question":"How many days are Business audit logs kept?","answer":"Business audit logs are retained for 30 days. [audit]","expected_answer":"90 days.","required_doc_ids":["audit"],"citations":["audit"],"expected_terms":["90 days"]},
+    {"id":"C05","question":"Which plan supports SAML single sign-on?","answer":"SAML 2.0 single sign-on is included with Enterprise. [sso]","expected_answer":"Enterprise plan.","required_doc_ids":["sso"],"citations":["sso"],"expected_terms":["Enterprise"]},
+    {"id":"C06","question":"Can a deleted file be restored after two weeks?","answer":"Deleted files can be recovered for 30 days. [deletion]","expected_answer":"Yes, during the 30-day recovery window.","required_doc_ids":["deletion"],"citations":["deletion"],"expected_terms":["30 days"]},
+    {"id":"C07","question":"What should our client do after an API 429 response?","answer":"Retry with exponential backoff and respect Retry-After. [rate-limit]","expected_answer":"Retry with exponential backoff and respect Retry-After.","required_doc_ids":["rate-limit"],"citations":["rate-limit"],"expected_terms":["exponential backoff","Retry-After"]},
+    {"id":"C08","question":"Can any workspace member download invoices?","answer":"Only the billing owner can download monthly PDF invoices. [invoices]","expected_answer":"No. Only the billing owner can download invoices.","required_doc_ids":["invoices"],"citations":["invoices"],"expected_terms":["billing owner"]},
+    {"id":"C09","question":"Where is EU customer data hosted?","answer":"European Union data is hosted in Frankfurt. [regions]","expected_answer":"Frankfurt region.","required_doc_ids":["regions"],"citations":["regions"],"expected_terms":["Frankfurt"]},
+    {"id":"C10","question":"Is the enterprise urgent support four hour target a fix guarantee?","answer":"Critical incidents target a first response within 4 hours, not guaranteed resolution. [support]","expected_answer":"No. It is a first-response target, not a resolution guarantee.","required_doc_ids":["support"],"citations":["support"],"expected_terms":["4 hours","first response"]},
+    {"id":"C11","question":"How long does an old API key work after rotation?","answer":"The old API key stays active for 24 hours. [keys]","expected_answer":"24 hours after rotation.","required_doc_ids":["keys"],"citations":["keys"],"expected_terms":["24 hours"]},
+    {"id":"C12","question":"How do we authenticate incoming webhook events?","answer":"Verify the HMAC SHA-256 signature before processing. [keys]","expected_answer":"Verify the HMAC SHA-256 signature with the webhook secret.","required_doc_ids":["webhooks"],"citations":["keys"],"expected_terms":["HMAC SHA-256","webhook secret"]}
+  ]
+}
